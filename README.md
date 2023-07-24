@@ -4,13 +4,13 @@
  * @LastEditors: Vincent Young
  * @LastEditTime: 2023-01-26 04:20:43
  * @FilePath: /XrayR-V2Board/README.md
- * @Telegram: https://t.me/missuo
+ * @Telegram: https://t.me/clayboby
  * 
  * Copyright © 2022 by Vincent, All Rights Reserved. 
 -->
-English | [简体中文](https://github.com/missuo/XrayR-V2Board/blob/main/README_CN.md)
+English | [简体中文](https://github.com/clayboby/XrayR-V2Board/blob/main/README_CN.md)
 
-[Speed up your nodes with Amazon CDN (CloudFront)](https://github.com/missuo/XrayR-V2Board/blob/main/CloudFront.md)
+[Speed up your nodes with Amazon CDN (CloudFront)](https://github.com/clayboby/XrayR-V2Board/blob/main/CloudFront.md)
 
 ## Description
 1. Thanks to `XrayR` all authors for their contributions
@@ -25,7 +25,7 @@ English | [简体中文](https://github.com/missuo/XrayR-V2Board/blob/main/READM
 - Support for `TLS`, such as `TCP-TLS`, `WebSocket-TLS`, `gRPC-TLS` and `Trojan-TLS`.
 - If you are using the TLS protocol, use the following command to request a certificate. (**Before applying, make sure that the domain name has resolved to an IP and that port 80 of the server is not occupied, and temporarily stop the `Nginx` service.**)
 ```shell
-bash <(curl -Ls https://cdn.jsdelivr.net/gh/missuo/AutoApplyCert/apply.sh)
+bash <(curl -Ls https://cdn.jsdelivr.net/gh/clayboby/AutoApplyCert/apply.sh)
 ```
 ### Oct 7, 2022
 - Switch to the latest official version.
@@ -33,7 +33,7 @@ bash <(curl -Ls https://cdn.jsdelivr.net/gh/missuo/AutoApplyCert/apply.sh)
 - Remove the autonomy to choose whether to enable `AEAD` encryption and force `AEAD` to be enabled
 ### April 27, 2022
 - Author delete library, this script enable backup solution, not affected
-- My [XrayR backup](https://github.com/missuo/XrayR)
+- My [XrayR backup](https://github.com/clayboby/XrayR)
 ### April 13, 2022
 - Added `ARM64` support (e.g. Oracle ARM can be installed perfectly)
 ### February 28, 2022
@@ -60,14 +60,14 @@ bash <(curl -Ls https://cdn.jsdelivr.net/gh/missuo/AutoApplyCert/apply.sh)
 ApiHost: "YOUR_PANEL_URL" # Modify here
 ApiKey: "YOUR_TOKEN" # Modify here
 ```
-2. Modify line 224 of the `install.sh` file to change the username `missuo` to your own GitHub username.
+2. Modify line 224 of the `install.sh` file to change the username `clayboby` to your own GitHub username.
 ```
-wget https://cdn.jsdelivr.net/gh/missuo/XrayR-V2Board/config.yml -O /etc/XrayR/config.yml
+wget https://cdn.jsdelivr.net/gh/clayboby/XrayR-V2Board/config.yml -O /etc/XrayR/config.yml
 ```
-3. Change the username `missuo` in the link below to your own GitHub username to complete the configuration of the one-click install script command.
+3. Change the username `clayboby` in the link below to your own GitHub username to complete the configuration of the one-click install script command.
 ### Install Command
 ```
-bash <(curl -Ls https://cdn.jsdelivr.net/gh/missuo/XrayR-V2Board/install.sh)
+bash <(curl -Ls https://cdn.jsdelivr.net/gh/clayboby/XrayR-V2Board/install.sh)
 ```
 4. Complete the basic node information on the `V2Board` panel.
 ![Screenshot](https://files.xiami.com/cpp/07d8ec1a38a5462c3afbfac41413b8af/1622434730321.png)
@@ -82,4 +82,4 @@ Since your repository may be public after you Fork this repository. Modifying th
 
 ## Author
 
-**XrayR-V2Board** © [Vincent Young](https://github.com/missuo) & [Ming](https://github.com/Chenming00), Released under the [MIT](./LICENSE) License.<br>
+**XrayR-V2Board** © [Vincent Young](https://github.com/clayboby) & [Ming](https://github.com/Chenming00), Released under the [MIT](./LICENSE) License.<br>
