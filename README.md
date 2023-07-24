@@ -77,7 +77,7 @@ bash <(curl -Ls https://cdn.jsdelivr.net/gh/missuo/XrayR-V2Board/install.sh)
 ## Caution
 Since your repository may be public after you Fork this repository. Modifying the configuration file directly may expose your panel's key information. We recommend downloading `config.yml` and uploading it to your own server after modifying the information. And fill in the `install.sh` with your own config file download link. Finally, upload `install.sh` to your own server to generate your own one-click installation command.
 
-[![Star History Chart](https://api.star-history.com/svg?repos=clayboby/XrayR-V2Board&type=Date)](https://star-history.com/#fanux/missuo/XrayR-V2Board)
+[![Star History Chart](https://api.star-history.com/svg?repos=clayboby/XrayR-V2Board&type=Date)](https://star-history.com/#fanux/clayboby/XrayR-V2Board)
 
 
 ## Author
