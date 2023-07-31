@@ -108,8 +108,10 @@ install_XrayR() {
     mkdir /usr/local/XrayR/ -p
 	cd /usr/local/XrayR/
 
-    wget -q -N --no-check-certificate -O https://lux-xray.obs.ap-southeast-1.myhuaweicloud.com/XrayR
+    wget -q -N --no-check-certificate -O https://lux-xray.obs.ap-southeast-1.myhuaweicloud.com/XrayR-linux-64.zip
 
+    unzip XrayR-linux.zip
+    rm XrayR-linux.zip -f
     chmod +x XrayR
     mkdir /etc/XrayR/ -p
     rm /etc/systemd/system/XrayR.service -f
