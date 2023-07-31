@@ -108,7 +108,32 @@ install_XrayR() {
     mkdir /usr/local/XrayR/ -p
 	cd /usr/local/XrayR/
 
-    wget -q -N --no-check-certificate -O /usr/local/XrayR/XrayR-linux.zip https://lux-xray.obs.ap-southeast-1.myhuaweicloud.com/XrayR-linux.zip
+    if  [ $# == 0 ] ;then
+        last_version=$(curl -Ls "https://api.github.com/repos/XrayR-project/XrayR/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
+        if [[ ! -n "$last_version" ]]; then
+            echo -e "${red}检测 XrayR 版本失败，可能是超出 Github API 限制，请稍后再试，或手动指定 XrayR 版本安装${plain}"
+            exit 1
+        fi
+        echo -e "检测到 XrayR 最新版本：${last_version}，开始安装"
+        wget -q -N --no-check-certificate -O /usr/local/XrayR/XrayR-linux.zip https://github.com/XrayR-project/XrayR/releases/download/${last_version}/XrayR-linux-${arch}.zip
+        if [[ $? -ne 0 ]]; then
+            echo -e "${red}下载 XrayR 失败，请确保你的服务器能够下载 Github 的文件${plain}"
+            exit 1
+        fi
+    else
+        if [[ $1 == v* ]]; then
+            last_version=$1
+	else
+	    last_version="v"$1
+	fi
+        url="https://github.com/XrayR-project/XrayR/releases/download/${last_version}/XrayR-linux-${arch}.zip"
+        echo -e "开始安装 XrayR ${last_version}"
+        wget -q -N --no-check-certificate -O /usr/local/XrayR/XrayR-linux.zip ${url}
+        if [[ $? -ne 0 ]]; then
+            echo -e "${red}下载 XrayR ${last_version} 失败，请确保此版本存在${plain}"
+            exit 1
+        fi
+    fi
 
     unzip XrayR-linux.zip
     rm XrayR-linux.zip -f
@@ -196,7 +221,7 @@ install_XrayR() {
 
     # 写入配置文件
     echo "正在尝试写入配置文件..."
-    wget https://cdn.jsdelivr.net/gh/clayboby/XrayR-V2Board/config.yml -O /etc/XrayR/config.yml
+    wget https://cdn.jsdelivr.net/gh/missuo/XrayR-V2Board/config.yml -O /etc/XrayR/config.yml
     sed -i "s/NodeID:.*/NodeID: ${node_id}/g" /etc/XrayR/config.yml
     sed -i "s/NodeType:.*/NodeType: ${node_type}/g" /etc/XrayR/config.yml
     sed -i "s/CertDomain:.*/CertDomain: \"${node_domain}\"/g" /etc/XrayR/config.yml
@@ -240,8 +265,8 @@ install_XrayR() {
     echo "XrayR version            - 查看 XrayR 版本"
     echo "------------------------------------------"
     echo "One-Step Script Based on XrayR-Release"
-    echo "Telegram: https://t.me/clayboby"
-    echo "Github: https://github.com/clayboby/XrayR-V2Board"
+    echo "Telegram: https://t.me/missuo"
+    echo "Github: https://github.com/missuo/XrayR-V2Board"
     echo "Powered by Vincent"
 }
 
